@@ -1,4 +1,5 @@
 #include "output-dialog.hpp"
+#include "ozk-settings-style.hpp"
 
 #include <QDialog>
 #include <QVBoxLayout>
@@ -274,7 +275,7 @@ obs_data_t *OutputDialog::getService(std::string serviceName)
 
 OutputDialog::OutputDialog(QDialog *parent, QStringList _otherNames) : QDialog(parent), otherNames(_otherNames)
 {
-	setStyleSheet("QDialog, QWidget {background:#080f19; color:#d7e5f2;} QLabel {color:#d7e5f2;} QPushButton, QToolButton {background:#172536; color:#d7e5f2; border:1px solid #344c63; border-radius:5px; padding:5px 9px;} QPushButton:hover, QToolButton:hover {background:#21364b;} QLineEdit, QComboBox {background:#0c1724; color:#e5f0fa; border:1px solid #344c63; border-radius:5px; padding:4px;} QGroupBox {background:#101d2c; border:1px solid #294158; border-radius:7px;}");
+	setStyleSheet(ozkSettingsStyle());
 	// Load the services from rtmp-services plugin
 	auto servicesPath = obs_module_get_config_path(obs_get_module("rtmp-services"), "services.json");
 	auto absolutePath = os_get_abs_path_ptr(servicesPath);
@@ -329,7 +330,7 @@ OutputDialog::OutputDialog(QDialog *parent, QString name, QString server, QStrin
 	: QDialog(parent),
 	  otherNames(_otherNames)
 {
-	setStyleSheet("QDialog, QWidget {background:#080f19; color:#d7e5f2;} QLabel {color:#d7e5f2;} QPushButton, QToolButton {background:#172536; color:#d7e5f2; border:1px solid #344c63; border-radius:5px; padding:5px 9px;} QPushButton:hover, QToolButton:hover {background:#21364b;} QLineEdit, QComboBox {background:#0c1724; color:#e5f0fa; border:1px solid #344c63; border-radius:5px; padding:4px;} QGroupBox {background:#101d2c; border:1px solid #294158; border-radius:7px;}");
+	setStyleSheet(ozkSettingsStyle());
 
 	// Load the services from rtmp-services plugin
 	auto module = obs_get_module("rtmp-services");

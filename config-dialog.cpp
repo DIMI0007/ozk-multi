@@ -1,4 +1,5 @@
 #include "config-dialog.hpp"
+#include "ozk-settings-style.hpp"
 
 #include <QCheckBox>
 #include <QComboBox>
@@ -53,7 +54,7 @@ OBSBasicSettings::OBSBasicSettings(QMainWindow *parent) : QDialog(parent)
 	setMinimumWidth(983);
 	setMinimumHeight(480);
 	setWindowTitle(obs_module_text("AitumMultistreamSettings"));
-	setStyleSheet("QDialog {background:#080f19; color:#d7e5f2;} QListWidget, QStackedWidget, QScrollArea {background:#0b1521; color:#d7e5f2; border:1px solid #273c51; border-radius:6px;} QListWidget::item:selected {background:#19372f; color:#effff9;} QPushButton, QToolButton {background:#172536; color:#d7e5f2; border:1px solid #344c63; border-radius:5px; padding:5px 9px;} QPushButton:hover, QToolButton:hover {background:#21364b;} QLineEdit, QComboBox, QSpinBox {background:#0c1724; color:#e5f0fa; border:1px solid #344c63; border-radius:5px; padding:4px;} QGroupBox {border:1px solid #273c51; border-radius:7px; margin-top:5px;} QLabel {color:#d7e5f2;}");
+	setStyleSheet(ozkSettingsStyle());
 	setSizeGripEnabled(true);
 
 	const auto main_window = static_cast<QMainWindow *>(obs_frontend_get_main_window());
