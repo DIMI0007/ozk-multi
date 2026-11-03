@@ -182,7 +182,8 @@ MultistreamDock::MultistreamDock(QWidget *parent) : QFrame(parent)
 	setLayout(mainLayout);
 	setStyleSheet("QFrame {background:#080f19; color:#d7e5f2;} QScrollArea {background:#080f19; border:none;} QScrollArea > QWidget > QWidget {background:#080f19;}");
 	auto header = new QHBoxLayout;
-	header->setContentsMargins(2, 2, 2, 2);
+	// Match the visible 10 px edge inset and 10 px top inset of OZK Notify.
+	header->setContentsMargins(10, 10, 10, 2);
 	header->setSpacing(7);
 	auto brand = new QLabel;
 	brand->setPixmap(QIcon(":/aitum/media/stream-multi.svg").pixmap(28, 28));
@@ -345,7 +346,7 @@ MultistreamDock::MultistreamDock(QWidget *parent) : QFrame(parent)
 		}
 	});
 
-	configButton->setStyleSheet("QPushButton {background:#172536; border:1px solid #344c63; border-radius:6px; color:#b9cce0;} QPushButton:hover {background:#21364b; border-color:#4a7188;}");
+	configButton->setStyleSheet("QPushButton {background:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 #202a3b,stop:1 #141d2b); border:1px solid #39465d; border-radius:8px; color:#e1ebff;} QPushButton:hover {background:#26344d; border-color:#6476a0;}");
 	header->addWidget(configButton);
 
 	// Compact links keep both the project support and the upstream credit visible.
