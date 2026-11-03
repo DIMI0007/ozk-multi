@@ -35,6 +35,6 @@ jobs:
           Get-FileHash $file.FullName -Algorithm SHA256 | Format-List
       - uses: actions/upload-artifact@v4
         with:
-          name: OZKMulti-0.1.7-OBS33-Windows-x64
+          name: OZKMulti-0.1.8-OBS33-Windows-x64
           path: package/
           if-no-files-found: error

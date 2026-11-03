@@ -182,7 +182,7 @@ MultistreamDock::MultistreamDock(QWidget *parent) : QFrame(parent)
 	setLayout(mainLayout);
 	setStyleSheet("QFrame {background:#080f19; color:#d7e5f2;} QScrollArea {background:#080f19; border:none;} QScrollArea > QWidget > QWidget {background:#080f19;}");
 	auto header = new QHBoxLayout;
-	header->setContentsMargins(8, 8, 8, 5);
+	header->setContentsMargins(2, 2, 2, 2);
 	header->setSpacing(7);
 	auto brand = new QLabel;
 	brand->setPixmap(QIcon(":/aitum/media/stream-multi.svg").pixmap(28, 28));
@@ -312,7 +312,7 @@ MultistreamDock::MultistreamDock(QWidget *parent) : QFrame(parent)
 
 	// Config Button
 	configButton = new QPushButton;
-	configButton->setMinimumHeight(30);
+	configButton->setFixedSize(30, 28);
 	configButton->setProperty("themeID", "configIconSmall");
 	configButton->setProperty("class", "icon-gear");
 	configButton->setFlat(true);
@@ -345,8 +345,6 @@ MultistreamDock::MultistreamDock(QWidget *parent) : QFrame(parent)
 		}
 	});
 
-	configButton->setMinimumWidth(30);
-	configButton->setMaximumWidth(34);
 	configButton->setStyleSheet("QPushButton {background:#172536; border:1px solid #344c63; border-radius:6px; color:#b9cce0;} QPushButton:hover {background:#21364b; border-color:#4a7188;}");
 	header->addWidget(configButton);
 
