@@ -6,7 +6,15 @@
 
 **OZK Multi — плагин мультистрима для OBS Studio:** управляет несколькими горизонтальными трансляциями на Twitch, YouTube, Kick и другие площадки из одной панели. Вертикальные сцены и их настройки в этой версии не используются.
 
-![OZK Multi в OBS Studio 33](docs/images/stream-multi-0.1.3.png)
+## Как выглядит
+
+<img src="docs/screenshots/home.jpg" width="325" alt="Компактная панель трёх потоков">
+
+| Общие настройки | Настройки потоков |
+| --- | --- |
+| <img src="docs/screenshots/settings.jpg" width="480" alt="Общие настройки OZK Multi"> | <img src="docs/screenshots/streams.jpg" width="480" alt="Кодировщик и параметры потока"> |
+
+[Предыдущий вид панели](docs/images/stream-multi-0.1.3.png)
 
 Разработчик оформления и адаптации: **DMITRII / [OTMOPOZOK](https://www.youtube.com/channel/UCTAKYR3T2Ud8zZgNShgQfyw/)**. Проект основан на открытом [Aitum Multistream](https://github.com/Aitum/obs-aitum-multistream) команды Aitum и Exeldro. Их авторство и лицензия GPL-2.0 сохранены.
 
