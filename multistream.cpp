@@ -1,3 +1,4 @@
+#include "ozk_performance.hpp"
 #include "config-utils.hpp"
 #include "multistream.hpp"
 #include "obs-module.h"
@@ -174,6 +175,7 @@ config_t *get_user_config(void)
 
 MultistreamDock::MultistreamDock(QWidget *parent) : QFrame(parent)
 {
+    ozkperf::install();
 	// Main layout
 	mainLayout = new QVBoxLayout;
 	mainLayout->setContentsMargins(0, 0, 0, 0);
@@ -371,6 +373,8 @@ MultistreamDock::MultistreamDock(QWidget *parent) : QFrame(parent)
 
 	mainVideo = obs_get_video();
 	connect(&videoCheckTimer, &QTimer::timeout, [this] {
+        const int interval=isVisible()?(obs_frontend_streaming_active()?500:1500):3000;
+        if(videoCheckTimer.interval()!=interval)videoCheckTimer.setInterval(interval);
 		if (exiting) {
 			return;
 		}
